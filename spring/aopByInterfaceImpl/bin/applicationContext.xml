@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+	
+	<!-- 定义要织入的面Advice 增强代码 -->
+	<bean id="before" class="aop.MethodBeforeAdvice" ></bean>
+	<bean id="after" class="aop.AfterReturn"></bean>
+	<bean id="error" class="aop.ErrorMethod"></bean>
+	<bean id="around" class="aop.AroundMethod"></bean>
+	<!-- 声明Bean  织入目标-->
+	<bean id="dao" class="dao.impl.UserDao"></bean>
+	
+	<!-- 配置AOp -->
+	<aop:config proxy-target-class="true">
+		<!-- 配置切入点 pointcut -->
+		<aop:pointcut expression="execution(public * dao.*.*(..))" id="daoImpl"/>
+		<!-- 将Advice 织入 Pointcut -->
+		<aop:advisor advice-ref="before" pointcut-ref="daoImpl"/>
+		<aop:advisor advice-ref="after" pointcut-ref="daoImpl"/>
+		<aop:advisor advice-ref="error" pointcut-ref="daoImpl"/>
+		<aop:advisor advice-ref="around" pointcut-ref="daoImpl"/>
+	</aop:config>
+	<bean id="biz" class="biz.UserBiz">
+		<property name="dao" ref="dao"></property>
+	</bean>
+</beans>
