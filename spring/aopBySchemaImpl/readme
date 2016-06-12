@@ -1,0 +1,3 @@
+Schema形式定义切面，个人感觉，像是 注解和实现接口的中和，
+也是可以一个JavaBean中定义多个Advice（增强处理）使用注解，表明是什么增强
+在applicationContext.xml中配置 ，Advice 和pointCut·

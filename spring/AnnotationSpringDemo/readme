@@ -1,0 +1,2 @@
+ 注解实现面向切面编程  架包是用的 libs1 
+ 代码比较简单，所有的增强处理方法可以定义在一个JavaBean里面，只要在applicationContext.xml声明bean就可以，非常方便
