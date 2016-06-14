@@ -1,0 +1,3 @@
+SSH框架集成Demo spring struts2 Hibernate 框架的集成Demo
+	dao类 使用了 为其注入 Hibernatete 的方式，没有继承HibernateDaoSupport类
+	
