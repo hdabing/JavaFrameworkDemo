@@ -1,0 +1,2 @@
+ SSH框架使用的Demo 集成了 spring struts2 hibernate 3个框架
+ 这个Demo dao类使用了继承 HibernateDaoSupport的方式 使用HibernateTemplate
