@@ -3,3 +3,4 @@ spring框架的各种Demo
 	aopByInterfaceImpl  :实现接口的方法实现切面 ，实现增强处理；
 	aopBySchemaImpl     :schema形式实现切面，
 	springAndStruts2    :spring和struts2的 无缝整合 Demo
+	springAndHibernate  :spring和Hibernate的整合使用 Demo
