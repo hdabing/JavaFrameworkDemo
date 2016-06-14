@@ -4,3 +4,5 @@ spring框架的各种Demo
 	aopBySchemaImpl     :schema形式实现切面，
 	springAndStruts2    :spring和struts2的 无缝整合 Demo
 	springAndHibernate  :spring和Hibernate的整合使用 Demo
+	ssh		    :SSH集成使用 spring struts2 Hibernate 框架 demo1
+	ssh_2		    :SSH集成使用 spring struts2 Hibernate 框架 Demo2
