@@ -1,0 +1,8 @@
+ spring和hibernate整合的demo
+ 开发步骤：
+ 	1.创建Java项目
+	2.导入jar包
+	3.创建Hibernate.cgf.xml文件，创建实体Bean和实体映射文件;
+	4.创建spring配置文件applicationContext.xml文件，声明几个Bean(DataSource,sessionFactory,声明式事务)
+	5.开发Dao ，配置Dao，在applicationContext.xml文件中配置dao，为daoBean注入sessionFactory，dao要继承HibernateDaoSupport ，开发service，配置service 为了使用声明式事务而开发，为其注入 Dao 开发Biz类，为其注入 service ，
+	6.测试

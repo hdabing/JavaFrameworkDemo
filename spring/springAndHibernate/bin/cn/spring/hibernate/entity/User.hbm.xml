@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- lazy="false" -->
+	<class name="cn.spring.hibernate.entity.User" table="USERS">
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_ID</param>
+			</generator>
+		</id>
+		<property name="userName" type="string">
+			<column name="USERNAME"></column>
+		</property>
+		<property name="pwd" type="string">
+			<column name="PASSWORD"></column>
+		</property>
+		<property name="email" column="EMAIL" type="string"></property>
+	</class>
+</hibernate-mapping>
