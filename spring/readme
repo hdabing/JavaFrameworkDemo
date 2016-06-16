@@ -6,3 +6,4 @@ spring框架的各种Demo
 	springAndHibernate  :spring和Hibernate的整合使用 Demo
 	ssh		    :SSH集成使用 spring struts2 Hibernate 框架 demo1
 	ssh_2		    :SSH集成使用 spring struts2 Hibernate 框架 Demo2
+	esale		    :SSH练习 Demo 实现增删改查（分页查询）
