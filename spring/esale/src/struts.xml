@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<package name="base" extends="struts-default" namespace="/">
+	
+		<!-- 用户登录 -->
+		<action name="login" class="loginAction">
+			<result name="success" type="redirect">/hello.jsp</result>
+			<result name="input" type="redirect">/login.jsp</result>
+		</action>
+		
+		<!-- 订单提交 -->
+		<action name="submitGoodsORder" class="submitGoodsORderAction">
+			<result name="success" type="redirect">/toSubmitGoodsOrderDetail.action?orderId=${goodsOrder.id}&amp;message=${message}</result>
+			<result name="input" type="dispatcher">/to_submit_goods_order.jsp</result>
+		</action>
+		
+		<!-- 去提交订单明细 -->
+		<action name="toSubmitGoodsOrderDetail" class="toSubmitGoodsOrderDetailAction">
+			<result name="success" type="dispatcher">/to_submit_goods_order_detail.jsp</result>
+			<result name="input" type="dispatcher">/to_submit_goods_order.jsp</result>
+		</action>
+		
+		<!-- 添加订单明细 -->
+		<action name="addGoodsOrderDetail" class="addGoodsOrderDetailAction">
+			<result name="success" type="redirect">/toSubmitGoodsOrderDetail.action?orderId=${detail.orderId}&amp;message=${message}</result>
+			<result name="input" type="dispatcher">/to_submit_goods_order.jsp</result>
+		</action>
+		
+		<!-- 删除订单 -->
+		<action name="removeGoodsOrder" class="removeGoodsOrderAction">
+			<result name="success" type="redirect">/remove_goods_order_result.jsp?orderId=${detail.orderId}&amp;message=${message}</result>
+		</action>
+		
+		<!-- 删除订单明细 -->
+		<action name="removeGoodsOrderDetail" class="removeGoodsOrderDetailAction">
+			<result name="success" type="redirect">/toSubmitGoodsOrderDetail.action?orderId=${goodsOrder.id}&amp;message=${message}</result>
+		</action>
+		
+		<!-- 分页查询订单 -->
+		<action name="queryGoodsOrder" class="queryGoodsOrderAction">
+			<result name="success" type="dispatcher">/query_goods_order_result.jsp</result>
+		</action>
+		
+	</package>
+</struts>

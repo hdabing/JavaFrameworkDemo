@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.jbit.esale.entity.User" table="users">
+		<!-- dynamic-update="true" -->
+		<!-- select-before-update="true" -->
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_USER</param>
+			</generator>
+		</id>
+		<property name="name" type="string">
+			<column name="name" />
+		</property>
+		<property name="password" type="string">
+			<column name="password" />
+		</property>
+		<property name="telephone" type="string">
+			<column name="telephone" />
+		</property>
+		<property name="userName" type="string">
+			<column name="username" />
+		</property>
+		<property name="isAdmin" type="string">
+			<column name="isadmin" />
+		</property>
+	</class>
+</hibernate-mapping>

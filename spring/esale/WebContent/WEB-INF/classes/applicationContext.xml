@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<!-- 数据源配置 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
+		<property name="username" value="mxc"></property>
+		<property name="password" value="mxc"></property>
+	</bean>
+
+	<!-- Hibernate Session工厂 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+			</props>
+		</property>
+		
+		<property name="mappingDirectoryLocations">
+		 <list> 
+		 	<value>classpath:cn/jbit/esale/entity</value> 
+		</list> 
+		</property>
+	</bean>
+
+	<!-- 事务管理器 -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"></tx:method>
+			<tx:method name="find*" read-only="true"></tx:method>
+			<tx:method name="list*" read-only="true"></tx:method>
+			<tx:method name="query*" read-only="true"></tx:method>
+			<tx:method name="add*" propagation="REQUIRED"></tx:method>
+			<tx:method name="submit*" propagation="REQUIRED"></tx:method>
+			<tx:method name="edit*" propagation="REQUIRED"></tx:method>
+			<tx:method name="update*" propagation="REQUIRED"></tx:method>
+			<tx:method name="delete*" propagation="REQUIRED"></tx:method>
+			<tx:method name="remove*" propagation="REQUIRED"></tx:method>
+			<tx:method name="*"></tx:method>
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- AOP -->
+	<aop:config>
+		<aop:pointcut id="serviceMethod"
+			expression="execution(* cn.jbit.esale.service.*.*(..))"></aop:pointcut>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"></aop:advisor>
+	</aop:config>
+
+	<!-- 配置Dao -->
+	
+	<!-- HibernateTemplate -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="esaleDao" class="cn.jbit.esale.dao.EsaleDao">
+		<property name="hibernateTemplate"  ref="hibernateTemplate"></property>
+	</bean>
+
+	<!-- 配置service -->
+	<bean id="esaleService" class="cn.jbit.esale.service.EsaleServiceImpl">
+		<property name="esaleDao" ref="esaleDao"> </property>
+	 </bean>
+	 
+	 <!-- 配置Action -->
+	 <bean id="loginAction" class="cn.jbit.esale.action.LoginAction" scope="prototype">
+	 	<property name="esaleService" ref="esaleService"></property>
+	 </bean>
+	 
+	 <!-- 添加订单 -->
+	 <bean id="submitGoodsORderAction" class="cn.jbit.esale.action.SubmitGoodsORderAction" scope="prototype">
+	 	<property name="esaleService" ref="esaleService"></property>
+	 </bean>
+	 
+	 <!-- 去添加订单明细 -->
+	 <bean id ="toSubmitGoodsOrderDetailAction" class="cn.jbit.esale.action.ToSubmitGoodsOrderDetailAction" scope="prototype">
+	 	<property name="esaleService" ref="esaleService"></property>
+	 </bean>
+	 
+	 <!-- 添加订单明细 -->
+	 <bean id = "addGoodsOrderDetailAction" class="cn.jbit.esale.action.AddGoodsOrderDetailAction" scope="prototype">
+	 	<property name="esaleService" ref="esaleService"></property>
+	 </bean>
+	 
+	 <!-- 删除订单 -->
+	 <bean id ="removeGoodsOrderAction" class="cn.jbit.esale.action.RemoveGoodsOrderAction" scope="prototype">
+	 	<property name="esaleService" ref="esaleService"></property>
+	 </bean>
+	 
+	 <!--  删除订单明细 -->
+	 <bean id="removeGoodsOrderDetailAction" class="cn.jbit.esale.action.RemoveGoodsOrderDetailAction" scope="prototype">
+	 	<property name="esaleService" ref="esaleService"></property>
+	 </bean>
+	 
+	 <!-- 分页查询订单 -->
+	 <bean id="queryGoodsOrderAction" class="cn.jbit.esale.action.QueryGoodsOrderAction" scope="prototype">
+	 	<property name="esaleService" ref="esaleService"></property>
+	 </bean>
+	 
+</beans>

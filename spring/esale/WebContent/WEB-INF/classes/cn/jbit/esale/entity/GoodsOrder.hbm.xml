@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.jbit.esale.entity.GoodsOrder" table="GOODS_ORDER">
+		<!-- dynamic-update="true" -->
+		<!-- select-before-update="true" -->
+		<id name="id" type="int">
+			<column name="ID" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_GOODS_ORDER</param>
+			</generator>
+		</id>
+		<property name="code" type="string">
+			<column name="CODE" />
+		</property>
+		<property name="trueName" type="string">
+			<column name="TRUE_NAME" />
+		</property>
+		<property name="email" type="string">
+			<column name="EMAIL" />
+		</property>
+		<property name="phone" type="string">
+			<column name="PHONE" />
+		</property>
+		<property name="address" type="string">
+			<column name="ADDRESS" />
+		</property>
+		<property name="totalMoney" type="string">
+			<column name="TOTAL_MONEY" />
+		</property>
+		<property name="remark" type="string">
+			<column name="REMARK" />
+		</property>
+		<property name="submitTime" type="timestamp">
+			<column name="SUBMIT_TIME" />
+		</property>
+	</class>
+</hibernate-mapping>
