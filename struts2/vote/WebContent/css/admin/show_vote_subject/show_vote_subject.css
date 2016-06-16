@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+/**投票内容标题*/
+.vote-subject-title{
+	position:static;
+	padding:5px;
+	font-weight:bold;
+	font-size:14px;
+	height:25px;
+	line-height:25px;
+	color:#000;
+}
+
+	/**选项列表容器*/
+	.vote-option-list{
+		position:static;
+		padding:5px;
+	}
+		/**选项*/
+		.vote-option-list.>.vote-option{
+			position:static;
+			padding:5px;
+			height:22px;
+			line-height:22px;
+			color:#000;
+			font-size;12px;
+			padding-left:10px;
+		}

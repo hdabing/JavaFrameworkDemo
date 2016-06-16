@@ -1,0 +1,179 @@
+@CHARSET "UTF-8";
+
+/**/
+body{
+	margin:0px auto;
+	padding:0px;
+	width:80%;
+	
+}
+body>div{
+	position:static;
+	width:98%;
+	margin:0px auto;
+}
+/* 头部*/
+.page-head{
+	border:0px;
+	border-bottom:1px solid #ccc;
+	
+}
+/* 中间 */
+.page-middle{
+	overflow:hidden;
+	
+}
+
+/*中间左边*/
+.page-middle>.page-menu{
+	position:static;
+	float:left;
+	width:20%;
+}
+	/*菜单容器*/
+	.page-middle>.page-menu>ul{
+		position:static;
+		margin:0px;
+		padding:0px;
+		list-style-type:none;
+	
+	}
+		/*菜单项*/
+		.page-middle>.page-menu>ul>li{
+			position:static;
+			height:20px;
+			line-height:20px;
+			padding:10px;
+			border:1px solid #EFEFEF;
+			cursor:pointer;
+		}
+		/*菜单项*/
+		.page-middle>.page-menu>ul>li+li{
+			margin-top:10px;
+		}
+			/**菜单项的连接*/
+			.page-middle>.page-menu>ul>li>a{
+				text-decoration:none;
+				color:#666;
+			}
+			/**菜单项的连接*/
+			.page-middle>.page-menu>ul>li:hover{
+				background-color:yellow;
+				
+			}
+/**菜单项的连接*/
+.page-middle>.page-menu>ul>li:hover>a{
+	color:red;
+	
+}
+/*中间右边*/
+.page-middle>.page-content{
+	position:static;
+	float:left;
+	width:80%;'
+}
+
+/* 尾部 */
+.page-footer{
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+	font-weight:normal;
+	text-align:center;
+	padding-right:20px;
+	border:0px;
+	border-top:1px solid #ccc;
+	font-size:14px;
+}
+
+.clear{
+	position:static;
+	display:block;
+	width:1px;
+	height:1px;
+	clear:both;
+}
+	/**投票页面 */
+		.query-form-panel{
+			position:static;
+			display:block;
+			clear:both;
+			
+		}
+		/**查询那 两字*/
+		.query-form-panel>.title{
+			position:static;
+			display:block;
+			clear:both;
+			height:25px;
+			line-height:25px;
+			font-size:16px;
+			font-weight:bold;
+			color:black;
+			margin-left:10px;
+			
+		}
+		.query-form-panel>.content{
+				border:2px solid #EFEFEF;
+				/* overflow:hidden; */
+				height:50px;
+				line-height:50px;
+				margin-left:15px;
+		}
+		.query-form-panel>.content>.unit{
+				position:static;
+				display:block;
+				float:left;
+				height:30px;
+				text-align:right;
+				padding-right:2px;
+				paddign-left:8px;
+		}
+		
+		.query-form-panel>.content>.unit>.editable{
+				position:static;
+				display:block;
+				float:left;
+				height:30px;
+				line-heigth:30px;
+		}
+		.query-form-panel>.content>.unit>.label{
+				position:static;
+				display:block;
+				float:left;
+				height:30px;
+				line-heigth:30px;
+				padding-left:2px;
+				padding-right:8px;
+				color:#000;
+				font-weight:bold;
+		}
+		.query-form-panel>.content>.unit>.editable>input[type=text]{
+			margin-top:10px;
+			width:150px;
+			height:25px;
+			line-height:25px;
+			border:1px solid #666666;
+		}
+		.query-form-panel>.content>.unit>.editable>.action-button{
+				
+				/* position:static;
+				display:block;
+				float:left;
+				height:30px;
+				line-height:30px;
+				margin-left:15px;
+				margin-top:10px; */
+		}
+		.query-form-panel>.content>.unit>.action-button>button{
+				position:static;
+				display:block;
+				float:left;
+				height:25px;
+				border:1px solid #ccc;
+				margin-left:10px;
+				margin-top:12px;
+		}
+		.query-form-panel>.content>.unit>.action-button>button:hover{
+				background-color:blue;
+		}

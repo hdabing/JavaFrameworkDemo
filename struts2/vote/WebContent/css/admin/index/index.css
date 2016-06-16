@@ -1,0 +1,46 @@
+/*头部*/
+	.page-header{
+		height:auto;
+		border:0px;
+		border-bottom:1px solid #CCC;
+	}
+/*左导航*/
+	.left-menu{
+		width:200px;
+	}
+	.left-menu>.menu-tree{
+		margin:10px;
+		padding:20px;
+		padding-right:30px;
+	}
+/*中间内容*/
+	.page-content{}
+	
+	.page-content>.page-panel{
+		position:static;
+		padding:5px;
+		border:0px;
+	}
+	.page-content>.page-panel>.welcome-info{
+		text-align:center;
+		font-size:32px;
+		font-weight:bold;
+		color:blue;
+	}
+	.page-content>.page-panel>.welcome-info>.message{
+		text-align:center;
+		padding:20px;
+		padding-left:180px;
+		color:red;
+		line-height:22px;
+		font-weight:normal;
+		font-size:14px;
+	}
+	/*底部*/
+	.page-footer{
+		height:30px;
+		text-align:center;
+		border:0px;
+		padding-bottom:20px;
+		font-size:14px;
+	}

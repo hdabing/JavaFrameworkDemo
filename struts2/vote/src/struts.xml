@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<!-- 扫描指定的包，创建Action 在 vn.jbit.order包中扫描Action-->
+	<constant name="struts.convention.package.locators.basePackage"
+		value="cn.jbit.vote.action" />
+	<!-- Action类名最后的组成部分 （后缀限制，限制为Action），比如设置成qqq，则MyTestqqq将视为action， 而MyTest则不是，访问时会截去这个部分 -->
+	<constant name="struts.convention.action.suffix" value="Action" />
+	<!-- 定义一个包，Action使用注解时使用 -->
+	<package name="base" extends="struts-default" namespace="/">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult"></result-type>
+		</result-types>
+	</package>
+	<!-- 管理平台 -->
+	<package name="admin" extends="base" namespace="/admin">
+		<!-- 管理平台安全验证拦截器 -->
+		<interceptors>
+			<interceptor name="VerifyLoginInterceptor" class="cn.jbit.vote.action.admin.VerifyLoginInterceptor"></interceptor>
+			
+			<!-- 管理平台默认拦截器 -->
+			<interceptor-stack name="adminStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="VerifyLoginInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 定义默认拦截器 -->
+		<default-interceptor-ref name="adminStack"></default-interceptor-ref>
+		
+		<!-- 全局result -->
+		<global-results>
+			<result name="login" type="dispatcher">/html/admin/login.jsp</result>
+		</global-results>
+	</package>
+	<!-- 用户平台 -->
+	<package name="user" extends="base" namespace="/user">
+		<!-- 管理平台安全验证拦截器 -->
+		<interceptors>
+			<interceptor name="VerifyLoginInterceptor" class="cn.jbit.vote.action.user.VerifyLoginInterceptor"></interceptor>
+			
+			<!-- 管理平台默认拦截器 -->
+			<interceptor-stack name="userStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="VerifyLoginInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 定义默认拦截器 -->
+		<default-interceptor-ref name="userStack"></default-interceptor-ref>
+		
+		<!-- 全局result -->
+		<global-results>
+			<result name="login" type="dispatcher">/html/user/login.jsp</result>
+		</global-results>
+	</package>
+	
+</struts>

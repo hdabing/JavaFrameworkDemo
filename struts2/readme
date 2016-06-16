@@ -1,0 +1,2 @@
+ struts2 的各种Demo 直接可以导入使用
+ 	vote:投票系统，整合了 hibernate struts2 Action使用注解方式 前端使用了jQueryUI和easyUI

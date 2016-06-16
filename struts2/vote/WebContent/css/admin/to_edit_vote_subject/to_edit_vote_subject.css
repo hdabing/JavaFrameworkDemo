@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+.row>.label{
+		
+		height:30px;
+		line-height:30px;
+		width:120px;
+	}
+.row>.editable{
+		height:30px;
+		line-height:30px;
+		
+	}
+.row>.editable>input[type=text]{
+	
+		height:22px;
+		width:150px;
+	
+	}
+.row.vote-option-list{
+	
+	
+}
+.row.vote-option-list>.data-list{
+	padding-left:120px;
+}
+.row.vote-option-list>.unconfirm{
+	padding-left:120px;
+	
+}

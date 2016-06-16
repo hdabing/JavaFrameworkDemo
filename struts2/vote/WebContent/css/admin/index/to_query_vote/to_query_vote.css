@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+/*查询结果*/
+	.operating>a{
+		color:#333;
+		text-decoration:none;
+		
+	}
+	.operating>a:hover{
+		color:red;
+	}
+

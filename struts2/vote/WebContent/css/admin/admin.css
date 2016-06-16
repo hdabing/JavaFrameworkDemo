@@ -1,0 +1,178 @@
+@CHARSET "UTF-8";
+
+/*投票列表容器*/
+.page-panel-content{
+	position:static;
+	display:block;
+	padding:0px;
+	padding-top:5px;
+	padding-left:5px;
+
+	
+	
+}
+/*投票列表 title*/
+	.page-panel-content>.title{
+		position:static;
+		display:block;
+		line-height:25px;
+		padding:0px;
+		padding-left:10px;
+		background-color:#EFEFEF;
+		border-bottom:1px solid #666666;
+		font-size:14px;
+		font-weight:bold;
+	}
+	/*投票列表 查询表单*/
+	.page-panel-content>.query-form-panel{
+		position:static;
+		display:block;
+		clear :both;
+		color:#000;
+		font-size:14px;
+		font-weight:bold;
+		padding-left:20px;
+		/* overflow:hidden; */
+		/* border:2px solid blue; */
+	}
+	.clear {
+		position: static;
+		display: block;
+		width: 1px;
+		height: 1px;
+		clear: both;
+	}
+	/*标题 那块*/
+	.page-panel-content>.query-form-panel>.content{
+		padding:5px;
+		border:1px solid #666;
+		position:static;
+		display:block;
+		clear :both;
+		overflow:hidden;
+		height:30px;
+		border:2px solid blue;
+		font-size:14px;
+		font-weight:bold;
+	}
+	/*表单详细*/
+	.page-panel-content>.query-form-panel>.content>.unit{
+		position:static;
+		display:block;
+		float:left;
+		margin-top:2px;
+		height:25px;
+		
+		
+		
+	}
+	/*表单 字段标题*/
+	.page-panel-content>.query-form-panel>.content>.unit>.label{
+		position:static;
+		display:block;
+		float:left;
+		height:30px;
+		line-height:30px;
+		font-size:14px;
+		font-weight:bold;
+		padding-left:10px;
+		padding-right:2px;
+		
+	}
+	/*输入框容器*/
+	.page-panel-content>.query-form-panel>.content>.unit>.editable{
+		position:static;
+		display:block;
+		float:left;
+		height:30px;
+		padding-right:5px;
+		
+	}
+		/*输入框*/
+	.page-panel-content>.query-form-panel>.content>.unit>.editable>input{
+		margin-top:2px;
+		margin-left:5px;
+		height: 22px;
+		border: 1px solid gray;
+		width: 150px;
+		
+	}
+	/*按钮容器*/
+	.page-panel-content>.query-form-panel>.content>.unit>.action{
+		
+	}
+		/*按钮*/
+		.page-panel-content>.query-form-panel>.content>.unit>.action>.queryBtn{
+			width:40px;
+			border:0px;
+			height:25px;
+			background-image:url("images/button_search.gif");
+			background-repeat:no-repeat;
+			background-position:left 0px;
+		}
+
+		
+		
+		
+		
+		
+		
+		
+	/**对话框 容器*/	
+	.dialog-panel-content{
+		position:static;
+		display:block;
+		padding:10px;
+	}		
+	.row{
+		postion:static;
+		display:block;
+		clear:both;
+	}
+	.row>a{
+		text-decoration:none;
+		color:#000;
+		font-size:14px;
+		postion:static;
+		display:block;
+		padding-left:10px;
+		margin:0px;
+		height:22px;
+		line-height:22px;
+	}
+	.row>a:hover{
+		color:#FF0000;
+	}
+	/**消息  showsubject*/	
+	.dialog-panel-content>.message{
+		background-color:yellow;
+		height:22px;
+		line-height:22px;
+		padding:10px;
+		color:red;
+		border:1px solid #CCCCCC;
+		font-size:14px;
+	}
+	
+	/**添加对话框*/
+	
+	.row>.label{
+		position:static;
+		display:block;
+		float:left;
+		text-align:right;
+		font-weight:bold;
+		
+		
+	}
+	.row>.editable{
+		position:static;
+		display:block;
+		float:left;
+	}
+	.row>.editable>input[type=text]{
+		margin-top:2px;
+	
+		
+		border:1px solid #000;
+	}
