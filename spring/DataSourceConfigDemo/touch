@@ -1,0 +1,5 @@
+	配置SessionFactory的各种方式，一共有四种方式
+	applicationContext1.xml 	：使用hibernate配置文件和spring配置文件分开的方式
+	applicationContext2.xml		: 把hibernate.cfg.xml写到了spring配置文件中
+	applicationContext4.xml		: 使用JNDI连接池方式  JNDI的配置在服务器的配置文件context.xml中 此Demo在docs/context.xml
+	applicationContext3.xml		: 使用引用属性文件的方式，把连接数据库的信息单独放在一个文件中，此Demo是  jdbc.properties 
