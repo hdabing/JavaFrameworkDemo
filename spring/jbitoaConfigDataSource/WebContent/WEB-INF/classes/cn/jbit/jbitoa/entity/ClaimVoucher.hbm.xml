@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.jbit.jbitoa.entity">
+	<class name="ClaimVoucher" table="biz_claim_voucher" dynamic-update="true"
+		select-before-update="true">
+		<!-- read-only read-write nonstrict-read-write transactional -->
+		<!-- <cache usage="read-write" /> -->
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_biz_claim_voucher</param>
+			</generator>
+		</id>
+		<property name="nextDealSn" type="string">
+			<column name="NEXT_DEAL_SN" />
+		</property>
+		<property name="createSn" type="string">
+			<column name="CREATE_SN" />
+		</property>
+		<property name="createTime" type="timestamp">
+			<column name="create_time">
+				<comment>填写时间</comment>
+			</column>
+		</property>
+		<property name="event" type="string">
+			<column name="event" not-null="true">
+				<comment>事由</comment>
+			</column>
+		</property>
+		<property name="totalAccount" type="string">
+			<column name="total_account">
+				<comment>总金额</comment>
+			</column>
+		</property>
+		<property name="status" type="string">
+			<column name="status">
+				<comment>状态</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

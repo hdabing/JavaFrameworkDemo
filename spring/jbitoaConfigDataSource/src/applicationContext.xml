@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<!-- 数据源配置 -->
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
+		<property name="username" value="mxc"></property>
+		<property name="password" value="mxc"></property>
+	</bean> -->
+	<!-- jndi方式配置DataSource -->
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jboa"></property>
+	</bean>
+	
+	<!-- Hibernate Session工厂 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- dataSource 注入给SessionFactory -->
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<!-- 反向生成 -->
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+			</props>
+		</property>
+
+		<!-- 逐个定义xml映射文件 -->
+		<!-- <property name="mappingResources">
+			 <list> 
+			 	<value>cn/jbit/jbitoa/entity/Account.hbm.xml</value> 
+			</list> 
+		</property> -->
+		
+		<!-- 只需要写上包的路径就可以了 -->
+		<property name="mappingDirectoryLocations"> 
+			<list> 
+				<!-- 定义实体的包 自动去这个路径加载 xml文件 -->
+				<value>classpath:cn/jbit/jbitoa/entity</value> 
+			</list> 
+		</property>
+	</bean>
+
+	
+
+	<!-- 配置声明式事务 -->
+	
+	<!-- 事务管理器 功能 生成控制事务的代码-->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 事务通知 功能 控制事务 调用事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"></tx:method>
+			<tx:method name="find*" read-only="true"></tx:method>
+			<tx:method name="query*" read-only="true"></tx:method>
+			<tx:method name="list*" read-only="true"></tx:method>
+			<tx:method name="insert*" propagation="REQUIRED"></tx:method>
+			<tx:method name="add*" propagation="REQUIRED"></tx:method>
+			<tx:method name="submit*" propagation="REQUIRED"></tx:method>
+			<tx:method name="save*" propagation="REQUIRED"></tx:method>
+			<tx:method name="update*" propagation="REQUIRED"></tx:method>
+			<tx:method name="modify*" propagation="REQUIRED"></tx:method>
+			<tx:method name="edit*" propagation="REQUIRED"></tx:method>
+			<tx:method name="del*" propagation="REQUIRED"></tx:method>
+			<tx:method name="remove*" propagation="REQUIRED"></tx:method>
+			<tx:method name="*"></tx:method>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- AOP 将事务织入 此代码中 哪个代码需要声明式事务就植入那个方法中去-->
+	<aop:config>
+		<aop:pointcut id="serviceMethod"
+			expression="execution(* cn.jbit.jbitoa.service.*.*(..))"></aop:pointcut>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"></aop:advisor>
+	</aop:config>
+	
+	<!-- Dao  每一个Dao必须注入sessionFactory-->
+	<bean id="jbitOADao" class="cn.jbit.jbitoa.dao.JbitOADao">
+		<!-- 注入 sessionFactory -->
+		<property name="sessionFactory"  ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- Service 青鸟办公自动化业务 织入的实现类 将会被织入声明式事务 -->
+	<bean id="jbitOAService" class="cn.jbit.jbitoa.service.JbitOAServiceImpl">
+		<property name="jbitOADao" ref="jbitOADao"></property>
+	</bean>
+	
+	<!-- 配置Action -->
+
+	<!-- 用户登录Action  配置scope表示 每一次请求都会生成一个对象actionBean 必须这么配置 -->
+	<bean id="loginAction" class="cn.jbit.jbitoa.action.LoginAction" scope="prototype">
+		<property name="jbitOAService" ref="jbitOAService"></property>
+	</bean>
+	
+	<!-- 登录之后去往的Action -->
+	<bean id ="mainAction" class="cn.jbit.jbitoa.action.MainAction" scope="prototype">
+		<property name="jbitOAService" ref="jbitOAService"></property>
+	</bean>
+	
+	<!-- 添加报销单 -->
+	<bean id="submitClaimVoucherAction" class="cn.jbit.jbitoa.action.SubmitClaimVoucherAction" scope="prototype">
+		<property name="jbitOAService" ref="jbitOAService"></property>
+	</bean>
+	
+	<!-- 验证码生成Action -->
+	<bean id="showVerifyCodeAction" class="cn.jbit.jbitoa.action.ShowVerifyCodeAction" scope="prototype">
+	
+	</bean>
+	
+	<!-- 用户登出 -->
+	<bean id="logoutAction" class="cn.jbit.jbitoa.action.LogoutAction" scope="prototype"></bean>
+</beans>
