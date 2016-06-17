@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<constant name="struts.ui.theme" value="xhtml" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.action.extension" value="do,action" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.multipart.maxSize" value="9437184" />
+
+	<!-- 搜索的Action资源包路径，无论层级，例如package.action，多项以逗号隔开 -->
+	<!-- <constant name="struts.convention.package.locators" value="action" 
+		/> -->
+	<!-- 是否不扫描类，默认false即要扫描，设为true则所有访问无效（不排除未知情况） -->
+	<!-- <constant name="struts.convention.action.disableScanning" value="false" 
+		/> -->
+	<constant name="struts.convention.package.locators.basePackage"
+		value="cn.jbit.demo.action" />
+
+	<!-- 类名最后的组成部分，比如设置成qqq，则MyTestqqq将视为action，而MyTest则不是，访问时会截去这个部分 -->
+	<constant name="struts.convention.action.suffix" value="Action" />
+
+	<package name="base" extends="struts-default" namespace="/">
+	</package>
+
+	<package name="order" extends="base" namespace="/order">
+
+	</package>
+</struts>
