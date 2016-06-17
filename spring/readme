@@ -7,3 +7,9 @@ spring框架的各种Demo
 	ssh		    :SSH集成使用 spring struts2 Hibernate 框架 demo1
 	ssh_2		    :SSH集成使用 spring struts2 Hibernate 框架 Demo2
 	esale		    :SSH练习 Demo 实现增删改查（分页查询）
+    autowriteDemoMode：自动装配 
+    jbit-autowrite            :自动转配练习
+    DataSourceConfigDemo: 配置DataSource 的四种方式
+    jbitoaConfigDataSource :使用 jndi方式 配置DataSource  Demo
+    jbitoaSplitDemo               ：spring配置文件拆分小案例   
+    annotationModel              : spring使用注解模板
