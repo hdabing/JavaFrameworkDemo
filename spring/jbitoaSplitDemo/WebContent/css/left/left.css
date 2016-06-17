@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu {
+	position: static;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 16px;
+	background-image: url("images/bg.gif");
+	background-position: left top;
+	background-repeat: repeat;
+	border: 0px solid #000000;
+	background-repeat: repeat;
+}
+
+.menu>.top {
+	position: static;
+	height: 28px;
+	background-image: url("images/menu_top_bg.gif");
+	background-position: left top;
+	background-repeat: repeat-x;
+	border: 0px solid #000000;
+}
+
+.menu>.top>.left {
+	position: static;
+	float: left;
+	width: 10px;
+	height: 28px;
+	background-image: url("images/menu_top_left.gif");
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
+
+.menu>.top>.right {
+	position: static;
+	float: right;
+	width: 10px;
+	height: 28px;
+	background-image: url("images/menu_top_right.gif");
+	background-position: right top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
+
+.menu>.content {
+	position: static;
+	background-image: url("images/menu_mid_bg.gif");
+	background-position: left top;
+	background-repeat: repeat-y;
+}
+
+.menu>.content>.content1 {
+	position: static;
+	line-height: 25px;
+	padding: 15px;
+	font-size: 14px;
+	background-image: url("images/menu_mid_bg1.gif");
+	background-position: right top;
+	background-repeat: repeat-y;
+	overflow: auto;
+}
+
+.menu>.bottom {
+	position: static;
+	height: 70px;
+	background-image: url("images/menu_bottom_bg.gif");
+	background-position: left top;
+	background-repeat: repeat-x;
+	border: 0px solid #000000;
+}
+
+.menu>.bottom>.left {
+	position: static;
+	float: left;
+	width: 10px;
+	height: 70px;
+	background-image: url("images/menu_bottom_left.gif");
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
+
+.menu>.bottom>.right {
+	position: static;
+	float: right;
+	width: 10px;
+	height: 70px;
+	background-image: url("images/menu_bottom_right.gif");
+	background-position: right top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}

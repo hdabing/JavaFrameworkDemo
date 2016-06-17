@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.jbit.jbitoa.entity">
+	<class name="Account" table="biz_account" dynamic-update="true"
+		select-before-update="true">
+		<!-- read-only read-write nonstrict-read-write transactional -->
+		<!-- <cache usage="read-write" /> -->
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_biz_account</param>
+			</generator>
+		</id>
+		<property name="usrId" type="string">
+			<column name="usr_id" />
+		</property>
+		<property name="accType" type="string">
+			<column name="acc_type" />
+		</property>
+		<property name="accMoney" type="string">
+			<column name="acc_money" />
+		</property>
+		<property name="sheetId" type="string">
+			<column name="sheet_id" />
+		</property>
+		<property name="accTime" type="date">
+			<column name="acc_time" />
+		</property>
+	</class>
+</hibernate-mapping>
