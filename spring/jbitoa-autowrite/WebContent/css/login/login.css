@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+body {
+	background-image: url("images/bg.gif");
+	background-position: left top;
+	background-repeat: repeat-x;
+	background-color: #4bb8ef;
+}
+
+.logo {
+	display: block;
+	position: static;
+	width: 690px;
+	height: 150px;
+	margin: 0 auto;
+	margin-top: 146px;
+	border: 0px solid #000000;
+}
+
+form {
+	display: block;
+	position: static;
+	width: 975px;
+	height: 215px;
+	margin: 0 auto;
+	padding: 0px;
+	background-image: url("images/login_panel.gif");
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
+
+form>input[name=sn] {
+	display: block;
+	position: static;
+	float: left;
+	width: 125px;
+	height: 20px;
+	margin-top: 44px;
+	margin-left: 400px;
+	border: 1px solid #A0A0A0;
+	clear: both;
+}
+
+form>input[name=password] {
+	display: block;
+	position: static;
+	float: left;
+	width: 125px;
+	height: 20px;
+	margin-top: 6px;
+	margin-left: 400px;
+	border: 1px solid #A0A0A0;
+	clear: both;
+}
+
+form>input[name=verifyCode] {
+	display: block;
+	position: static;
+	float: left;
+	width: 125px;
+	height: 20px;
+	margin-top: 6px;
+	margin-left: 400px;
+	border: 1px solid #A0A0A0;
+}
+
+form>button {
+	width: 100px;
+	height: 35px;
+	margin-top: 6px;
+	margin-left: 433px;
+	border: 0px solid #A0A0A0;
+	background-image: url("images/btn_login.gif");
+}
+
+form>.message {
+	float: left;
+	padding: 5px;
+	background-color: #f4f707;
+	height: 22px;
+	line-height: 22px;
+	margin-top: 10px;
+	margin-left: 330px;
+	color: red;
+	font-size: 14px;
+	font-weight: bold;
+	border: 1px solid #07c6bf;
+}
