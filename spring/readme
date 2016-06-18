@@ -13,3 +13,5 @@ spring框架的各种Demo
     jbitoaConfigDataSource :使用 jndi方式 配置DataSource  Demo
     jbitoaSplitDemo               ：spring配置文件拆分小案例   
     annotationModel              : spring使用注解模板
+    annotationTransaction        :使用注解实现 声明式事务
+
