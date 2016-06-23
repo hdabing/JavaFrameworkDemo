@@ -14,4 +14,5 @@ spring框架的各种Demo
     jbitoaSplitDemo               ：spring配置文件拆分小案例   
     annotationModel              : spring使用注解模板
     annotationTransaction        :使用注解实现 声明式事务
-
+    springAndQuartz		 :在spring中使用Quartz任务调度 Demo:
+    jbitoa			 :ssh框架 的使用 全部使用过的是配置文件，
