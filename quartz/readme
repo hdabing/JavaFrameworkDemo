@@ -1,0 +1,2 @@
+	Quartz 任务调度框架 的 Demo
+	QuartzDemo 		：演示Demo SimpleTrigger 和 CronTrigger ，SimpleTrigger每隔一段时间执行任务，CronTrigger 在指定时间执行任务 ，还有Calender 又来排除节假日
