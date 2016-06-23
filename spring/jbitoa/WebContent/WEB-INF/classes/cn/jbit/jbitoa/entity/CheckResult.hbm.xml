@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.jbit.jbitoa.entity">
+	<class name="CheckResult" table="biz_check_result" dynamic-update="true"
+		select-before-update="true">
+		<!-- read-only read-write nonstrict-read-write transactional -->
+		<!-- <cache usage="read-write" /> -->
+		<id name="id" type="long">
+			<column name="id" />
+			<generator class="sequence">
+				<param name="sequence">SEQ_biz_check_result</param>
+			</generator>
+		</id>
+		<property name="sheetType" type="string">
+			<column name="sheet_type">
+				<comment>单据类型</comment>
+			</column>
+		</property>
+		<property name="sheetId" type="long">
+			<column name="sheet_id">
+				<comment>单据编号</comment>
+			</column>
+		</property>
+		<property name="checkTime" type="date">
+			<column name="check_time">
+				<comment>审核时间</comment>
+			</column>
+		</property>
+		<property name="type" type="string">
+			<column name="type">
+				<comment>审核类型</comment>
+			</column>
+		</property>
+		<property name="checkSn" type="string">
+			<column name="CHECKER_SN" />
+		</property>
+		<property name="result" type="string">
+			<column name="result">
+				<comment>审核结果</comment>
+			</column>
+		</property>
+		<property name="comment" type="string">
+			<column name="comm">
+				<comment>审核意见</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

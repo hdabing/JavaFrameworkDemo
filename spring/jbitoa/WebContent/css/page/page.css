@@ -1,0 +1,271 @@
+@CHARSET "UTF-8";
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+.clear {
+	position: static;
+	height: 0px;
+	clear: both;
+}
+
+.page {
+	position: static;
+	padding: 5px;
+	padding-top: 16px;
+	border: 0px solid #000000;
+}
+
+.page>.title {
+	position: static;
+	border: 0px solid #000000;
+}
+
+.page>.title>.tab {
+	position: static;
+	float: left;
+	background-image: url("images/tab_bg.gif");
+	background-position: right top;
+	background-repeat: repeat-x;
+	border: 0px solid #000000;
+}
+
+.page>.title>.tab>.left {
+	position: static;
+	float: left;
+	width: 10px;
+	height: 29px;
+	background-image: url("images/tab_left.gif");
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
+
+.page>.title>.tab>.text {
+	position: static;
+	float: left;
+	height: 29px;
+	line-height: 29px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 14px;
+	border: 0px solid #000000;
+}
+
+.page>.title>.tab>.right {
+	position: static;
+	float: right;
+	width: 10px;
+	height: 29px;
+	background-image: url("images/tab_right.gif");
+	background-position: right top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
+
+.page>.content {
+	position: static;
+	background-image: url("images/page_mid_bg.gif");
+	background-position: left top;
+	background-repeat: repeat-y;
+	border: 0px solid #000000;
+}
+
+.page>.content>.content1 {
+	position: static;
+	line-height: 25px;
+	padding: 15px;
+	font-size: 14px;
+	background-image: url("images/page_mid_bg1.gif");
+	background-position: right top;
+	background-repeat: repeat-y;
+	overflow: auto;
+	border: 0px solid #000000;
+}
+
+.page>.content>.content1 table {
+	padding: 0px;
+	border-left: 1px solid #222222;
+	border-top: 1px solid #222222;
+}
+
+.page>.content>.content1 table tr.title {
+	background-image: url("images/bg.gif");
+	background-color: #EFEFEF;
+}
+
+.page>.content>.content1 table+table {
+	margin-top: 5px;
+}
+
+.page>.content>.content1 table th,td {
+	padding: 2px;
+	margin: 0px;
+	text-align: left;
+	border-bottom: 1px solid #222222;
+	border-right: 1px solid #222222;
+}
+
+.page>.content>.content1 input {
+	padding-left: 2px;
+	height: 22px;
+	line-height: 24px;
+	border: 1px solid #000000;
+}
+
+.page>.content>.content1 textarea {
+	border: 1px solid #000000;
+}
+
+.page>.content>.content1 .button {
+	width: 101px;
+	height: 24px;
+	border: 0;
+	background: url("images/submit.gif") no-repeat;
+	text-align: center;
+	font: 14px "宋体";
+}
+
+.page>.content>.content1 button.delete {
+	width: 16px;
+	height: 16px;
+	background: url("images/delete.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 button.save {
+	width: 16px;
+	height: 16px;
+	background: url("images/save.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 button.edit {
+	width: 16px;
+	height: 16px;
+	background: url("images/edit.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 button.sub {
+	width: 16px;
+	height: 16px;
+	background: url("images/sub.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 button.query {
+	width: 16px;
+	height: 16px;
+	background: url("images/search.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+
+.page>.content>.content1 a {
+	position: static;
+	display: block;
+	float: left;
+	padding: 2px;
+	text-decoration: none;
+	border: 1px solid #cccccc;
+}
+
+.page>.content>.content1 a:HOVER{
+	background-color: #EFEFEF;
+	border: 1px solid #cccccc;
+}
+
+.page>.content>.content1 a+a{
+	margin-left: 5px;
+}
+
+.page>.content>.content1 a.delete {
+	width: 16px;
+	height: 16px;
+	float: left;
+	background: url("images/delete.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 a.save {
+	width: 16px;
+	height: 16px;
+	float: left;
+	background: url("images/save.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 a.edit {
+	width: 16px;
+	height: 16px;
+	float: left;
+	background-image: url("images/edit.gif");
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 a.sub {
+	width: 16px;
+	height: 16px;
+	float: left;
+	background: url("images/sub.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 a.query {
+	width: 16px;
+	height: 16px;
+	float: left;
+	background: url("images/search.gif") no-repeat;
+	border: 0 solid #000000;
+}
+
+.page>.content>.content1 form {
+	padding: 0px;
+	margin: 0px;
+}
+
+.page>.content>.content1 form .title {
+	text-align: center;
+	font-weight: bold;
+	background-image: url("images/bg.gif");
+	background-color: #EFEFEF;
+}
+
+.page>.content>.content1 form .content {
+	
+}
+
+.page>.footer {
+	position: static;
+	background-image: url("images/page_bottom_bg.gif");
+	background-position: right top;
+	background-repeat: repeat-x;
+	border: 0px solid #000000;
+}
+
+.page>.footer>.left {
+	position: static;
+	float: left;
+	width: 10px;
+	height: 66px;
+	background-image: url("images/page_bottom_left.gif");
+	background-position: left top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
+
+.page>.footer>.right {
+	position: static;
+	float: right;
+	width: 10px;
+	height: 66px;
+	background-image: url("images/page_bottom_right.gif");
+	background-position: right top;
+	background-repeat: no-repeat;
+	border: 0px solid #000000;
+}
