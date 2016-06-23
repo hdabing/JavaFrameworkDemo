@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+
+	<!-- service -->
+	<bean id="remindService" class="cn.jbit.demo.job.service.RemindServiceImpl"></bean>
+	
+	<!-- 配置Job -->
+	<bean id="remindJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<!-- 具体任务类 -->
+		<property name="jobClass" value="cn.jbit.demo.job.RemindJob"></property>
+		<!-- 配置任务数据 -->
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="remindService" value-ref="remindService"></entry>
+				<entry key="name" value="张三"></entry>
+			</map>
+		</property>
+		
+	</bean>
+	<!-- 配置Trigger -->
+	<bean id="myTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<!-- 配置JobDetail -->
+		<property name="jobDetail" ref="remindJob"></property>
+		<!-- Cron表达式 -->
+		<property name="cronExpression" value="0/3 * * * * ?"></property>
+	</bean>
+	
+	<!-- 配置scheduler -->
+	
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 指定触发器 -->
+				<ref bean="myTrigger" />
+				<!-- 可以在这里添加其他的触发器 -->
+			</list>
+		</property>
+	
+	</bean>
+</beans>
