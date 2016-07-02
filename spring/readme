@@ -16,3 +16,5 @@ spring框架的各种Demo
     annotationTransaction        :使用注解实现 声明式事务
     springAndQuartz		 :在spring中使用Quartz任务调度 Demo:
     jbitoa			 :ssh框架 的使用 全部使用过的是配置文件，
+    springjdbc     :spring jdbcTemplate  的简单使用，增伤改查  加入了声明式事务
+    springjdbc_ann:spring jdbcTemplate 注解版使用 加入了声明式事务
