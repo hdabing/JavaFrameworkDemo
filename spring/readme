@@ -18,3 +18,8 @@ spring框架的各种Demo
     jbitoa			 :ssh框架 的使用 全部使用过的是配置文件，
     springjdbc     :spring jdbcTemplate  的简单使用，增伤改查  加入了声明式事务
     springjdbc_ann:spring jdbcTemplate 注解版使用 加入了声明式事务
+    SQLSessionTemplateMysql      :spring整合MyBatis 简单练习 SQLSessionTemplate的使用
+    Chapter10_Demo01_Ann        ：spring整合MyBatis 注解版本练习 SQLSessionTamplate的使用
+   Chapter10_Demo02                  : spring整合MyBatis 省略Dao的实现类 使用getMapper()方法 练习
+ Chapter10_Demo02.MapperFactoryBean  ：  spring整合MyBatis 使用 MapperScannerConfigurer 配置Dao   Demo
+

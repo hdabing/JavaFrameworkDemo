@@ -1,0 +1,1 @@
+spring整合MyBatis 省略Dao的实现类 使用getMapper()方法 练习

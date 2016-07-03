@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.jbit.ex.dao.ExerciseDao">
+	<resultMap id="claimVoucherResult" type="claimVoucher">
+		<result property="id" column="id"></result>
+		<result property="submitMan" column="submit_man"></result>
+		<result property="submitTime" column="submit_time"></result>
+		<result property="totalMoney" column="total_money"></result>
+		<result property="event" column="event"></result>
+	</resultMap>
+	
+	<!-- 动态查询 -->
+	<select id="queryClaimVoucher" parameterType="java.util.Map" resultMap="claimVoucherResult">
+		select  * from claim_voucher  cv
+		<where>
+			<if test="submitMan != null">
+				cv.submit_man like #{submitMan} 
+			</if>
+			
+			<if test="maxMoney != null">
+			 and (1+cv.total_money) &lt;= (1+#{maxMoney})
+			</if>
+		</where> 
+	</select>
+	<!-- 对于自增列 增加的第一种方法 -->
+	<insert id="saveClaimVoucher1" parameterType="claimVoucher">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+			select last_insert_id()
+		</selectKey>
+		
+		insert into claim_voucher(submit_man,event,submit_time,total_money)
+		values(#{submitMan},#{event},#{submitTime},#{totalMoney})
+	</insert>
+	<!-- 对于自增列 增加的第二种方法 -->
+	<insert id="saveClaimVoucher2" parameterType="claimVoucher" useGeneratedKeys="true" keyProperty="id">
+		insert into claim_voucher(submit_man,event,submit_time,total_money)
+		values(#{submitMan},#{event},#{submitTime},#{totalMoney})
+	</insert>
+	
+	<!-- 根据id查询 返回类型是别名-->
+	<select id="findClaimVoucher" parameterType="int" resultMap="claimVoucherResult">
+		select  * from claim_voucher where id =#{id}
+	</select>
+</mapper>
