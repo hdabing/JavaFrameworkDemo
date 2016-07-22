@@ -1,25 +1,25 @@
-spring框架的各种Demo
-	AnnotationSpringdemo:注解实现 切面，注解 实现增强处理；
-	aopByInterfaceImpl  :实现接口的方法实现切面 ，实现增强处理；
-	aopBySchemaImpl     :schema形式实现切面，
-	springAndStruts2    :spring和struts2的 无缝整合 Demo
-	springAndHibernate  :spring和Hibernate的整合使用 Demo
-	ssh		    :SSH集成使用 spring struts2 Hibernate 框架 demo1
-	ssh_2		    :SSH集成使用 spring struts2 Hibernate 框架 Demo2
-	esale		    :SSH练习 Demo 实现增删改查（分页查询）
-    autowriteDemoMode：自动装配 
-    jbit-autowrite            :自动转配练习
-    DataSourceConfigDemo: 配置DataSource 的四种方式
-    jbitoaConfigDataSource :使用 jndi方式 配置DataSource  Demo
-    jbitoaSplitDemo               ：spring配置文件拆分小案例   
-    annotationModel              : spring使用注解模板
-    annotationTransaction        :使用注解实现 声明式事务
-    springAndQuartz		 :在spring中使用Quartz任务调度 Demo:
-    jbitoa			 :ssh框架 的使用 全部使用过的是配置文件，
-    springjdbc     :spring jdbcTemplate  的简单使用，增伤改查  加入了声明式事务
-    springjdbc_ann:spring jdbcTemplate 注解版使用 加入了声明式事务
-    SQLSessionTemplateMysql      :spring整合MyBatis 简单练习 SQLSessionTemplate的使用
-    Chapter10_Demo01_Ann        ：spring整合MyBatis 注解版本练习 SQLSessionTamplate的使用
-   Chapter10_Demo02                  : spring整合MyBatis 省略Dao的实现类 使用getMapper()方法 练习
- Chapter10_Demo02.MapperFactoryBean  ：  spring整合MyBatis 使用 MapperScannerConfigurer 配置Dao   Demo
+#spring框架的各种Demo
+-	AnnotationSpringdemo:注解实现 切面，注解 实现增强处理；
+-	aopByInterfaceImpl  :实现接口的方法实现切面 ，实现增强处理；
+-	aopBySchemaImpl     :schema形式实现切面，
+-	springAndStruts2    :spring和struts2的 无缝整合 Demo
+-	springAndHibernate  :spring和Hibernate的整合使用 Demo
+-	ssh		    :SSH集成使用 spring struts2 Hibernate 框架 demo1
+-	ssh_2		    :SSH集成使用 spring struts2 Hibernate 框架 Demo2
+-	esale		    :SSH练习 Demo 实现增删改查（分页查询）
+-       autowriteDemoMode：自动装配 
+-       jbit-autowrite            :自动转配练习
+-       DataSourceConfigDemo: 配置DataSource 的四种方式
+-    jbitoaConfigDataSource :使用 jndi方式 配置DataSource  Demo
+-    jbitoaSplitDemo               ：spring配置文件拆分小案例   
+-    annotationModel              : spring使用注解模板
+-    annotationTransaction        :使用注解实现 声明式事务
+-    springAndQuartz		 :在spring中使用Quartz任务调度 Demo:
+-    jbitoa			 :ssh框架 的使用 全部使用过的是配置文件，
+-    springjdbc     :spring jdbcTemplate  的简单使用，增伤改查  加入了声明式事务
+-    springjdbc_ann:spring jdbcTemplate 注解版使用 加入了声明式事务
+-   SQLSessionTemplateMysql      :spring整合MyBatis 简单练习 SQLSessionTemplate的使用
+-    Chapter10_Demo01_Ann        ：spring整合MyBatis 注解版本练习 SQLSessionTamplate的使用
+-   Chapter10_Demo02                  : spring整合MyBatis 省略Dao的实现类 使用getMapper()方法 练习
+- Chapter10_Demo02.MapperFactoryBean  ：  spring整合MyBatis 使用 MapperScannerConfigurer 配置Dao   Demo
 
