@@ -1,5 +1,5 @@
  # 学习过的Java框架 练习Demo 以备以后查询使用
  1. /spring  spring框架的各种Demo
  2. /mybatis mybatis 框架Demo 
- 3. /hibernate hibernate框架 Demo
- 4. /Quartz Quartz 任务调度器的 demo
+ 3. /struts2 struts2框架 Demo
+ 4. /quartz Quartz 任务调度器的 demo
